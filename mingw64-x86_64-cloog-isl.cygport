@@ -1,8 +1,10 @@
 CROSS_HOST="x86_64-w64-mingw32"
-inherit cross
+GIT_URI="git://repo.or.cz/cloog.git"
+GIT_TAG="cloog-${PV}"
+inherit cross git
 
 NAME="mingw64-x86_64-cloog-isl"
-VERSION=0.18.0
+VERSION=0.18.3
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="CLooG-ISL for Win64 toolchain"
@@ -10,8 +12,8 @@ DESCRIPTION="CLooG is a free software and library to generate code for scanning
 Z-polyhedra. That is, it finds a code (e.g. in C, FORTRAN...) that reaches each
 integral point of one or more parameterized polyhedra. "
 HOMEPAGE="http://www.cloog.org/"
-SRC_URI="ftp://gcc.gnu.org/pub/gcc/infrastructure/cloog-${VERSION}.tar.gz"
-SRC_DIR="cloog-${VERSION}"
+#SRC_URI="ftp://gcc.gnu.org/pub/gcc/infrastructure/cloog-${VERSION}.tar.gz"
+#SRC_DIR="cloog-${VERSION}"
 
 # to make this fully parallel-installable with cloog-ppl, add this:
 #	--includedir=${CROSS_INCLUDEDIR}/cloog-isl
